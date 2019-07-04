@@ -20,10 +20,25 @@ class App extends React.Component {
       .catch(error => console.error('error: ', error));
   }
 
+  getAverageGrade() {
+    var studentsArray = this.state.grades;
+    var sum = 0;
+    for (var studentIndex = 0; studentIndex < studentsArray.length; studentIndex++) {
+      var currentStudentGrade = this.state.grades[studentIndex].grade;
+      sum += currentStudentGrade;
+    }
+    var average = Math.round(sum / studentsArray.length);
+    return (
+      Number.isNaN(average)
+        ? 'No Data'
+        : average
+    );
+  }
+
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Header gradeAverage= {this.getAverageGrade()}/>
         <GradeTable dataFromApp= {this.state.grades}/>
       </React.Fragment>
 
