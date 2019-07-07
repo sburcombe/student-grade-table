@@ -23,30 +23,6 @@
       "course": "Coding",
       "grade": 70,
       "id": 4
-    },
-    {
-      "name": "Richard",
-      "course": "Cooking",
-      "grade": 83,
-      "id": 5
-    },
-    {
-      "name": "Saria",
-      "course": "Physics",
-      "grade": 100,
-      "id": 6
-    },
-    {
-      "name": "Leonardo",
-      "course": "Martial Arts",
-      "grade": 93,
-      "id": 7
-    },
-    {
-      "name": "Donatello",
-      "course": "Martial Arts",
-      "grade": 94,
-      "id": 8
     }
   ]
 }
