@@ -7,7 +7,7 @@ class GradeTable extends React.Component {
     return (
       this.props.dataFromApp.length > 0
         ? this.props.dataFromApp.map(grade =>
-          <Grade key={grade.id} data={grade} />)
+          <Grade key={grade.id} data={grade} removal={this.props.deleteData} />)
         : <tr><td> No grades recorded </td></tr>
     );
   }
@@ -20,6 +20,7 @@ class GradeTable extends React.Component {
               <th scope="row" >Student Name</th>
               <th scope="row" >Course</th>
               <th scope="row" >Grade</th>
+              <th scope="row" >Operations</th>
             </tr>
           </thead>
           <tbody>

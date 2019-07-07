@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    this.deleteData = this.deleteData.bind(this);
   }
   componentDidMount() {
     fetch('/api/grades')
@@ -38,6 +39,21 @@ class App extends React.Component {
       )
       .catch(error => console.error('error: ', error));
   }
+  deleteData(id) {
+    fetch('/api/grades/' + id + '', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        return response.json();
+      }
+      ).then(response => {
+        this.updateData(response);
+      })
+      .catch(error => console.error('error: ', error));
+  }
 
   getAverageGrade() {
     var studentsArray = this.state.grades;
@@ -59,14 +75,10 @@ class App extends React.Component {
       <React.Fragment>
         <Header gradeAverage= {this.getAverageGrade()}/>
         <div className="d-flex">
-
-          <GradeTable dataFromApp={this.state.grades} />
+          <GradeTable dataFromApp={this.state.grades} deleteData = {this.deleteData} />
           <GradeForm dataUpdate={this.updateData}/>
-
         </div>
-
       </React.Fragment>
-
     );
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 class Header extends React.Component {
-
   render() {
     return (
       <React.Fragment>
@@ -11,9 +10,7 @@ class Header extends React.Component {
             <span className="badge badge-secondary">{this.props.gradeAverage}</span>
           </h2>
         </div>
-
       </React.Fragment>
-
     );
   }
 }

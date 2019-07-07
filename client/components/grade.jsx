@@ -8,6 +8,11 @@ class Grade extends React.Component {
         <td >{this.props.data.name} </td>
         <td >{this.props.data.course}</td>
         <td >{this.props.data.grade}</td>
+        <td>
+          <form onSubmit={() => this.props.removal(this.props.data.id)}>
+            <button type="submit" className="btn btn-danger" >Delete</button>
+          </form>
+        </td>
       </tr>
     );
   }
