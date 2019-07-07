@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import GradeTable from './grade-table';
+import GradeForm from './grade-form';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +18,24 @@ class App extends React.Component {
       .then(myJson => {
         this.setState({ grades: myJson });
       })
+      .catch(error => console.error('error: ', error));
+  }
+
+  updateData(data) {
+    fetch('/api/grades', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        return response.json();
+      }
+      ).then(myJson => {
+        this.setState({ grades: myJson });
+      }
+      )
       .catch(error => console.error('error: ', error));
   }
 
@@ -39,7 +58,13 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header gradeAverage= {this.getAverageGrade()}/>
-        <GradeTable dataFromApp= {this.state.grades}/>
+        <div className="d-flex">
+
+          <GradeTable dataFromApp={this.state.grades} />
+          <GradeForm dataUpdate={this.updateData}/>
+
+        </div>
+
       </React.Fragment>
 
     );

@@ -13,18 +13,21 @@ class GradeTable extends React.Component {
   }
   render() {
     return (
-      <table className = "table table-dark">
-        <thead>
-          <tr>
-            <th scope="row">Student Name</th>
-            <th scope="row">Course</th>
-            <th scope="row">Grade</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.getStudentGrades()}
-        </tbody>
-      </table>
+      <div className="col-sm-8 table-container">
+        <table className="table table-dark">
+          <thead scope="row">
+            <tr>
+              <th scope="row" >Student Name</th>
+              <th scope="row" >Course</th>
+              <th scope="row" >Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.getStudentGrades()}
+          </tbody>
+        </table>
+      </div>
+
     );
   }
 }
