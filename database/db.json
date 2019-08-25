@@ -19,10 +19,22 @@
       "id": 3
     },
     {
-      "name": "Stephanie",
+      "name": "Katrina",
       "course": "Coding",
-      "grade": 70,
-      "id": 4
+      "grade": 96,
+      "id": 5
+    },
+    {
+      "name": "Taylor",
+      "course": "History",
+      "grade": 100,
+      "id": 6
+    },
+    {
+      "name": "Kelsey",
+      "course": "Photography",
+      "grade": 100,
+      "id": 7
     }
   ]
 }
