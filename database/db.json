@@ -17,6 +17,24 @@
       "course": "Web Development",
       "grade": 50,
       "id": 3
+    },
+    {
+      "name": "Katrina",
+      "course": "Coding",
+      "grade": 96,
+      "id": 5
+    },
+    {
+      "name": "Taylor",
+      "course": "History",
+      "grade": 100,
+      "id": 6
+    },
+    {
+      "name": "Kelsey",
+      "course": "Photography",
+      "grade": 100,
+      "id": 7
     }
   ]
 }
